@@ -4,21 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ArtnaDesigner</title>
-  <meta name="description" content="ArtnaDesigner — kataloq və iş nümunələri." />
+  <meta name="description" content="ArtnaDesigner — dizayn işləri və kataloq." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="topbar">
     <div class="brand">
-      <div class="logo-wrap">
-        <!-- LOGO: assets/logo.png -->
-        <img class="logo" src="assets/logo.png" alt="ArtnaDesigner logo" />
-      </div>
-      <div class="brand-text">
+      <img src="assets/logo.png" alt="ArtnaDesigner Logo" class="logo">
+      <div>
         <h1 class="brand-title">ArtnaDesigner</h1>
-        <p class="brand-sub">Kataloq • İş nümunələri</p>
+        <p class="brand-sub">Kataloq • Dizayn işləri</p>
       </div>
     </div>
 
@@ -29,95 +26,86 @@
     </nav>
   </header>
 
-  <!-- Hero -->
   <main class="container">
+
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-card">
         <h2 class="hero-title">Xəyallarını dizayna çevir.</h2>
         <p class="hero-text">
-          Burada ən son işlərimi və dizayn nümunələrimi görə bilərsən. Sifariş üçün əlaqə bölməsinə keç.
+          Sticker, poster və fərdi dizayn işləri. Yeni işlər mütəmadi əlavə olunur.
         </p>
-        <div class="hero-actions">
-          <a class="btn" href="#works">İşlərə bax</a>
-          <a class="btn btn-ghost" href="#contact">Əlaqə</a>
-        </div>
+        <a href="#works" class="btn">İşlərə bax</a>
       </div>
     </section>
 
-    <!-- Works -->
+    <!-- WORKS -->
     <section id="works" class="section">
-      <div class="section-head">
-        <h3 class="section-title">İşlər</h3>
-        <div class="filters">
-          <input id="search" class="input" type="search" placeholder="Axtar (ad, etiket...)" />
-          <select id="category" class="select">
-            <option value="all">Hamısı</option>
-          </select>
-        </div>
+      <h3 class="section-title">İşlər</h3>
+
+      <div class="filters">
+        <input id="search" class="input" type="search" placeholder="Axtar...">
+        <select id="category" class="select">
+          <option value="all">Hamısı</option>
+        </select>
       </div>
 
       <div id="grid" class="grid"></div>
-
-      <div id="empty" class="empty hidden">
-        Heç nə tapılmadı.
-      </div>
+      <div id="empty" class="hidden">Heç bir nəticə tapılmadı.</div>
     </section>
 
-    <!-- About -->
+    <!-- ABOUT -->
     <section id="about" class="section">
       <h3 class="section-title">Haqqında</h3>
       <div class="card">
-        <p class="muted">
-          ArtnaDesigner — dizayn işlərim üçün kataloq səhifəsidir. Burada sticker dizaynları, posterlər və digər iş nümunələri paylaşılır.
+        <p>
+          ArtnaDesigner — dizayn işlərimin nümayiş səhifəsidir.
+          Fərdi sifarişlər qəbul olunur.
         </p>
-        <ul class="list">
-          <li>Fərdi sifariş</li>
-          <li>Onlayn paylaşım</li>
-          <li>Yeni işlər mütəmadi əlavə olunur</li>
-        </ul>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section id="contact" class="section">
       <h3 class="section-title">Əlaqə</h3>
-      <div class="card contact">
-        <div class="contact-row">
-          <span class="label">Instagram:</span>
-          <a id="igLink" class="link" href="#" target="_blank" rel="noopener">link əlavə olunacaq</a>
-        </div>
-        <div class="contact-row">
-          <span class="label">WhatsApp:</span>
-          <a id="waLink" class="link" href="#" target="_blank" rel="noopener">link əlavə olunacaq</a>
-        </div>
-        <p class="muted small">
-          * Linkləri sonradan app.js-də 1 dəfə yazacağıq.
-        </p>
+      <div class="card">
+
+        <p><strong>Instagram:</strong></p>
+        <a 
+          href="https://instagram.com/artna_desinger" 
+          target="_blank">
+          instagram.com/artna_desinger
+        </a>
+
+        <br><br>
+
+        <p><strong>WhatsApp:</strong></p>
+        <a 
+          href="https://wa.me/994554417423?text=Salam%20ArtnaDesigner%20sifariş%20üçün%20yazıram" 
+          target="_blank">
+          055 441 74 23
+        </a>
+
       </div>
     </section>
+
   </main>
 
-  <!-- Modal -->
-  <div id="modal" class="modal hidden" aria-hidden="true">
-    <div class="modal-backdrop" data-close="1"></div>
-    <div class="modal-dialog" role="dialog" aria-modal="true">
-      <button class="modal-close" id="modalClose" aria-label="Bağla">×</button>
-      <div class="modal-body">
-        <img id="modalImg" class="modal-img" alt="" />
-        <div class="modal-info">
-          <h4 id="modalTitle" class="modal-title"></h4>
-          <p id="modalDesc" class="modal-desc muted"></p>
-          <div class="modal-meta">
-            <span id="modalPrice" class="pill hidden"></span>
-            <span id="modalCat" class="pill pill-ghost hidden"></span>
-          </div>
-        </div>
-      </div>
+  <!-- MODAL -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-dialog">
+      <button id="modalClose" class="modal-close">×</button>
+      <img id="modalImg" class="modal-img">
+      <h4 id="modalTitle"></h4>
+      <p id="modalDesc"></p>
+      <p id="modalPrice"></p>
+      <p id="modalCat"></p>
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <p class="muted small">© <span id="year"></span> ArtnaDesigner</p>
+    <p>© <span id="year"></span> ArtnaDesigner</p>
   </footer>
 
   <script src="app.js"></script>
