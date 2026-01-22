@@ -27,9 +27,7 @@ fetch("works.json")
     populateCategories(data);
     renderWorks(data);
   })
-  .catch(err => {
-    console.error("JSON yüklənmədi:", err);
-  });
+  .catch(err => console.error("JSON yüklənmədi:", err));
 
 // =======================
 // Render Works
@@ -57,7 +55,6 @@ function renderWorks(data) {
     `;
 
     card.addEventListener("click", () => openModal(item));
-
     grid.appendChild(card);
   });
 }
@@ -108,12 +105,8 @@ function openModal(item) {
   modalImg.src = item.image;
   modalTitle.textContent = item.title;
   modalDesc.textContent = item.description;
-
   modalPrice.textContent = item.price;
-  modalPrice.classList.remove("hidden");
-
   modalCat.textContent = item.category;
-  modalCat.classList.remove("hidden");
 
   modal.classList.remove("hidden");
   modal.setAttribute("aria-hidden", "false");
@@ -135,7 +128,10 @@ modal.addEventListener("click", (e) => {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // =======================
-// Contact Links (Dəyiş)
+// Contact Links
 // =======================
-document.getElementById("igLink").href = "https://instagram.com/";
-document.getElementById("waLink").href = "https://wa.me/";
+document.getElementById("igLink").href =
+  "https://instagram.com/artna_desinger";
+
+document.getElementById("waLink").href =
+  "https://wa.me/994554417423?text=Salam%20ArtnaDesigner%20sifariş%20üçün%20yazıram";
