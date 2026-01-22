@@ -1,280 +1,186 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ArtnaDesigner</title>
-  <meta name="description" content="ArtnaDesigner — iş kataloqu" />
+  <meta name="description" content="ArtnaDesigner — Sticker və dizayn kataloqu">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HERO POSTER STYLE -->
-  <header class="poster">
-    <div class="poster-frame">
-      <div class="poster-top">
-        <div class="mini-logo">
-          <img src="assets/logo.png" alt="ArtnaDesigner logo">
-        </div>
+<!-- ================= HERO POSTER ================= -->
+<header class="poster">
+  <div class="poster-frame">
 
-        <nav class="poster-nav">
-          <a href="#works">İşlər</a>
-          <a href="#about">Haqqında</a>
-          <a href="#contact">Əlaqə</a>
-        </nav>
+    <div class="poster-top">
+
+      <!-- LOGO -->
+      <div class="mini-logo">
+        <img src="assets/artnadesigner_logo.png" alt="ArtnaDesigner Logo">
       </div>
 
-      <div class="poster-center">
-        <p class="poster-kicker">ARTNADESIGNER</p>
-        <h1 class="poster-title">ARTNA</h1>
-        <p class="poster-subtitle">XƏYALLARINI STİKERƏ ÇEVİR</p>
+      <nav class="poster-nav">
+        <a href="#works">İşlər</a>
+        <a href="#about">Haqqında</a>
+        <a href="#contact">Əlaqə</a>
+      </nav>
 
-        <div class="ornament"></div>
+    </div>
 
-        <p class="poster-text">
-          Unikal sticker və dizayn nümunələri burada kataloq şəklində toplanır.
-          Sifariş və əlaqə üçün aşağıdakı bölməyə keç.
-        </p>
+    <div class="poster-center">
+      <p class="poster-kicker">ARTNADESIGNER</p>
+      <h1 class="poster-title">ARTNA</h1>
+      <p class="poster-subtitle">XƏYALLARINI STİKERƏ ÇEVİR</p>
 
-        <div class="poster-actions">
-          <a class="pbtn" href="#works">İşlərə bax</a>
-          <a class="pbtn ghost" href="#contact">Sifariş / Əlaqə</a>
-        </div>
+      <div class="ornament"></div>
+
+      <p class="poster-text">
+        Unikal sticker və kreativ dizayn işləri burada kataloq formatında toplanır.
+        Bütün işlər avtomatik əlavə olunur.
+      </p>
+
+      <div class="poster-actions">
+        <a class="pbtn" href="#works">İşlərə bax</a>
+        <a class="pbtn ghost" href="#contact">Sifariş / Əlaqə</a>
       </div>
     </div>
-  </header>
 
-  <main class="wrap">
+  </div>
+</header>
 
-    <!-- WORKS -->
-    <section id="works" class="section">
-      <div class="section-head">
-        <h2 class="section-title">İşlər</h2>
+<main class="wrap">
 
-        <div class="filters">
-          <input id="search" class="input" type="search" placeholder="Axtar (ad, etiket...)" autocomplete="off" />
-          <select id="category" class="select">
-            <option value="all">Hamısı</option>
-          </select>
-        </div>
+  <!-- ================= WORKS ================= -->
+  <section id="works" class="section">
+    <div class="section-head">
+      <h2 class="section-title">İşlər</h2>
+
+      <div class="filters">
+        <input id="search" class="input" type="search" placeholder="Axtar..." autocomplete="off">
+        <select id="category" class="select">
+          <option value="all">Hamısı</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="grid" class="grid"></div>
+    <div id="empty" class="empty hidden">Heç bir nəticə tapılmadı.</div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="section">
+    <h2 class="section-title">Haqqında</h2>
+    <div class="paper">
+      <p>
+        ArtnaDesigner fərdi və yaradıcı sticker dizaynları təqdim edir.
+        Yeni işlər mütəmadi olaraq əlavə olunur.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Əlaqə</h2>
+
+    <div class="paper contact">
+
+      <div class="c-row">
+        <span class="c-label">Instagram</span>
+        <span class="c-value">@artna_desinger</span>
       </div>
 
-      <div id="grid" class="grid"></div>
-      <div id="empty" class="empty hidden">Heç nə tapılmadı.</div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <h2 class="section-title">Haqqında</h2>
-      <div class="paper">
-        <p class="muted">
-          ArtnaDesigner — sticker və dizayn işlərinin kataloq səhifəsidir. Yeni işlər mütəmadi əlavə olunur.
-        </p>
+      <div class="c-row">
+        <span class="c-label">WhatsApp</span>
+        <span class="c-value">055 441 74 23</span>
       </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h2 class="section-title">Əlaqə</h2>
+      <div class="c-actions">
+        <a class="plink" href="https://instagram.com/artna_desinger" target="_blank">
+          Instagram-a keç
+        </a>
 
-      <div class="paper contact">
-        <div class="c-row">
-          <span class="c-label">Instagram</span>
-          <span class="c-value">@artna_desinger</span>
-        </div>
-        <div class="c-row">
-          <span class="c-label">WhatsApp</span>
-          <span class="c-value">055 441 74 23</span>
-        </div>
-
-        <div class="c-actions">
-          <a class="plink" href="https://instagram.com/artna_desinger" target="_blank" rel="noopener">Instagram-a keç</a>
-          <a class="plink" href="https://wa.me/994554417423?text=Salam%20ArtnaDesigner%20sifariş%20üçün%20yazıram" target="_blank" rel="noopener">WhatsApp-la yaz</a>
-        </div>
+        <a class="plink" href="https://wa.me/994554417423?text=Salam%20ArtnaDesigner%20sifariş%20üçün%20yazıram" target="_blank">
+          WhatsApp-la yaz
+        </a>
       </div>
-    </section>
 
-    <footer class="footer">
-      <p class="muted">© <span id="year"></span> ArtnaDesigner</p>
-    </footer>
-  </main>
+    </div>
+  </section>
 
-  <!-- MODAL -->
-  <div id="modal" class="modal hidden" aria-hidden="true">
-    <div class="modal-backdrop" data-close="1"></div>
-    <div class="modal-dialog" role="dialog" aria-modal="true">
-      <button class="modal-close" id="modalClose" aria-label="Bağla">×</button>
-      <div class="modal-body">
-        <img id="modalImg" class="modal-img" alt="" />
-        <div class="modal-info">
-          <h4 id="modalTitle" class="modal-title"></h4>
-          <p id="modalDesc" class="modal-desc muted"></p>
-          <div class="modal-meta">
-            <span id="modalPrice" class="pill hidden"></span>
-            <span id="modalCat" class="pill pill-ghost hidden"></span>
-          </div>
-        </div>
+  <footer class="footer">
+    © <span id="year"></span> ArtnaDesigner
+  </footer>
+
+</main>
+
+<!-- ================= MODAL ================= -->
+<div id="modal" class="modal hidden">
+  <div class="modal-backdrop" data-close="1"></div>
+
+  <div class="modal-dialog">
+    <button id="modalClose" class="modal-close">×</button>
+
+    <div class="modal-body">
+      <img id="modalImg" class="modal-img" alt="">
+
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <p id="modalPrice"></p>
+        <p id="modalCat"></p>
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-    const $ = (id) => document.getElementById(id);
+<script>
+const grid = document.getElementById("grid");
+const empty = document.getElementById("empty");
+const searchInput = document.getElementById("search");
+const categorySelect = document.getElementById("category");
 
-    const grid = $("grid");
-    const emptyState = $("empty");
-    const searchInput = $("search");
-    const categorySelect = $("category");
+let items = [];
 
-    const modal = $("modal");
-    const modalImg = $("modalImg");
-    const modalTitle = $("modalTitle");
-    const modalDesc = $("modalDesc");
-    const modalPrice = $("modalPrice");
-    const modalCat = $("modalCat");
-    const modalClose = $("modalClose");
+fetch("works.json")
+  .then(res => res.json())
+  .then(data => {
+    const list = Array.isArray(data) ? data : data.items;
+    items = list || [];
+    render(items);
+  });
 
-    let items = [];
+function render(data){
+  grid.innerHTML = "";
+  if(!data.length){
+    empty.classList.remove("hidden");
+    return;
+  }
+  empty.classList.add("hidden");
 
-    function esc(s) {
-      return String(s ?? "").replace(/[&<>"']/g, (m) => ({
-        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-      }[m]));
-    }
+  data.forEach(item=>{
+    const div = document.createElement("div");
+    div.className = "work";
+    div.innerHTML = `
+      <div class="work-img">
+        <img src="${item.image}" alt="${item.title}">
+      </div>
+      <div class="work-info">
+        <h3>${item.title}</h3>
+        <p>${item.price || ""}</p>
+      </div>
+    `;
+    grid.appendChild(div);
+  });
+}
 
-    function normalizeItem(raw) {
-      return {
-        title: String(raw.title ?? "").trim(),
-        description: String(raw.description ?? "").trim(),
-        price: String(raw.price ?? "").trim(),
-        category: String(raw.category ?? "").trim(),
-        image: String(raw.image ?? "").trim(),
-        tags: Array.isArray(raw.tags) ? raw.tags.map(t => String(t).trim()).filter(Boolean) : []
-      };
-    }
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
-    function setCategories(list) {
-      const set = new Set(list.map(x => x.category).filter(Boolean));
-      const cats = ["all", ...Array.from(set).sort((a,b)=>a.localeCompare(b))];
-
-      categorySelect.innerHTML = "";
-      cats.forEach(c => {
-        const opt = document.createElement("option");
-        opt.value = c;
-        opt.textContent = (c === "all") ? "Hamısı" : c;
-        categorySelect.appendChild(opt);
-      });
-    }
-
-    function render(list) {
-      grid.innerHTML = "";
-
-      if (!list.length) {
-        emptyState.classList.remove("hidden");
-        return;
-      }
-      emptyState.classList.add("hidden");
-
-      list.forEach(item => {
-        const card = document.createElement("button");
-        card.type = "button";
-        card.className = "work";
-        card.innerHTML = `
-          <div class="work-img">
-            <img src="${esc(item.image)}" alt="${esc(item.title)}" loading="lazy" />
-          </div>
-          <div class="work-info">
-            <h3>${esc(item.title)}</h3>
-            <p class="muted">${esc(item.price)}</p>
-          </div>
-        `;
-        card.addEventListener("click", () => openModal(item));
-        grid.appendChild(card);
-      });
-    }
-
-    function filter() {
-      const q = searchInput.value.toLowerCase().trim();
-      const c = categorySelect.value;
-
-      const out = items.filter(it => {
-        const hay = [
-          it.title,
-          it.description,
-          it.category,
-          it.price,
-          ...(it.tags || [])
-        ].join(" ").toLowerCase();
-
-        const okQ = !q || hay.includes(q);
-        const okC = (c === "all") || (it.category === c);
-        return okQ && okC;
-      });
-
-      render(out);
-    }
-
-    function openModal(item) {
-      modalImg.src = item.image;
-      modalImg.alt = item.title;
-      modalTitle.textContent = item.title;
-      modalDesc.textContent = item.description;
-
-      if (item.price) {
-        modalPrice.textContent = item.price;
-        modalPrice.classList.remove("hidden");
-      } else {
-        modalPrice.classList.add("hidden");
-      }
-
-      if (item.category) {
-        modalCat.textContent = item.category;
-        modalCat.classList.remove("hidden");
-      } else {
-        modalCat.classList.add("hidden");
-      }
-
-      modal.classList.remove("hidden");
-      modal.setAttribute("aria-hidden", "false");
-    }
-
-    function closeModal() {
-      modal.classList.add("hidden");
-      modal.setAttribute("aria-hidden", "true");
-      modalImg.src = "";
-    }
-
-    modalClose.addEventListener("click", closeModal);
-    modal.addEventListener("click", (e) => {
-      if (e.target && e.target.dataset && e.target.dataset.close) closeModal();
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
-    });
-
-    searchInput.addEventListener("input", filter);
-    categorySelect.addEventListener("change", filter);
-
-    $("year").textContent = new Date().getFullYear();
-
-    fetch("works.json", { cache: "no-store" })
-      .then(r => r.ok ? r.json() : Promise.reject(new Error("works.json tapılmadı")))
-      .then(data => {
-        const arr = Array.isArray(data) ? data : (Array.isArray(data.items) ? data.items : []);
-        items = arr.map(normalizeItem).filter(x => x.title && x.image);
-        setCategories(items);
-        render(items);
-      })
-      .catch(() => {
-        items = [];
-        setCategories([]);
-        render([]);
-      });
-  </script>
 </body>
 </html>
