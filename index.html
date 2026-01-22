@@ -1,113 +1,110 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ArtnaDesigner</title>
-  <meta name="description" content="ArtnaDesigner — dizayn işləri və kataloq." />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="ArtnaDesigner — Dizayn işləri və kataloq">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="topbar">
-    <div class="brand">
-      <img src="assets/logo.png" alt="ArtnaDesigner Logo" class="logo">
-      <div>
-        <h1 class="brand-title">ArtnaDesigner</h1>
-        <p class="brand-sub">Kataloq • Dizayn işləri</p>
-      </div>
-    </div>
-
-    <nav class="nav">
-      <a href="#works">İşlər</a>
-      <a href="#about">Haqqında</a>
-      <a href="#contact">Əlaqə</a>
-    </nav>
-  </header>
-
-  <main class="container">
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-card">
-        <h2 class="hero-title">Xəyallarını dizayna çevir.</h2>
-        <p class="hero-text">
-          Sticker, poster və fərdi dizayn işləri. Yeni işlər mütəmadi əlavə olunur.
-        </p>
-        <a href="#works" class="btn">İşlərə bax</a>
-      </div>
-    </section>
-
-    <!-- WORKS -->
-    <section id="works" class="section">
-      <h3 class="section-title">İşlər</h3>
-
-      <div class="filters">
-        <input id="search" class="input" type="search" placeholder="Axtar...">
-        <select id="category" class="select">
-          <option value="all">Hamısı</option>
-        </select>
-      </div>
-
-      <div id="grid" class="grid"></div>
-      <div id="empty" class="hidden">Heç bir nəticə tapılmadı.</div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <h3 class="section-title">Haqqında</h3>
-      <div class="card">
-        <p>
-          ArtnaDesigner — dizayn işlərimin nümayiş səhifəsidir.
-          Fərdi sifarişlər qəbul olunur.
-        </p>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h3 class="section-title">Əlaqə</h3>
-      <div class="card">
-
-        <p><strong>Instagram:</strong></p>
-        <a 
-          href="https://instagram.com/artna_desinger" 
-          target="_blank">
-          instagram.com/artna_desinger
-        </a>
-
-        <br><br>
-
-        <p><strong>WhatsApp:</strong></p>
-        <a 
-          href="https://wa.me/994554417423?text=Salam%20ArtnaDesigner%20sifariş%20üçün%20yazıram" 
-          target="_blank">
-          055 441 74 23
-        </a>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- MODAL -->
-  <div id="modal" class="modal hidden">
-    <div class="modal-dialog">
-      <button id="modalClose" class="modal-close">×</button>
-      <img id="modalImg" class="modal-img">
-      <h4 id="modalTitle"></h4>
-      <p id="modalDesc"></p>
-      <p id="modalPrice"></p>
-      <p id="modalCat"></p>
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="brand">
+    <img src="assets/logo.png" alt="ArtnaDesigner Logo" class="logo">
+    <div>
+      <h1 class="brand-title">ArtnaDesigner</h1>
+      <p class="brand-sub">Kataloq • Dizayn işləri</p>
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© <span id="year"></span> ArtnaDesigner</p>
-  </footer>
+  <nav class="nav">
+    <a href="#works">İşlər</a>
+    <a href="#about">Haqqında</a>
+    <a href="#contact">Əlaqə</a>
+  </nav>
+</header>
 
-  <script src="app.js"></script>
+<main class="container">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-card">
+      <h2 class="hero-title">Xəyallarını dizayna çevir.</h2>
+      <p class="hero-text">
+        Sticker, poster və fərdi dizayn işləri. Yeni işlər mütəmadi əlavə olunur.
+      </p>
+      <a href="#works" class="btn">İşlərə bax</a>
+    </div>
+  </section>
+
+  <!-- ================= WORKS ================= -->
+  <section id="works" class="section">
+    <h3 class="section-title">İşlər</h3>
+
+    <div class="filters">
+      <input id="search" class="input" type="search" placeholder="Axtar...">
+      <select id="category" class="select">
+        <option value="all">Hamısı</option>
+      </select>
+    </div>
+
+    <div id="grid" class="grid"></div>
+    <div id="empty" class="hidden">Heç bir nəticə tapılmadı.</div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="section">
+    <h3 class="section-title">Haqqında</h3>
+    <div class="card">
+      <p>
+        ArtnaDesigner — dizayn işlərimin nümayiş səhifəsidir.
+        Fərdi sifarişlər qəbul olunur. Yeni layihələr və kreativ işlər
+        bu kataloqda paylaşılır.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="section">
+    <h3 class="section-title">Əlaqə</h3>
+    <div class="card">
+
+      <p><strong>Instagram:</strong> @artna_desinger</p>
+      <a href="https://instagram.com/artna_desinger" target="_blank">
+        instagram.com/artna_desinger
+      </a>
+
+      <br><br>
+
+      <p><strong>Telefon / WhatsApp:</strong> 055 441 74 23</p>
+      <a href="https://wa.me/994554417423?text=Salam%20ArtnaDesigner%20sifariş%20üçün%20yazıram" target="_blank">
+        WhatsApp ilə yaz
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= MODAL ================= -->
+<div id="modal" class="modal hidden">
+  <div class="modal-dialog">
+    <button id="modalClose" class="modal-close">×</button>
+    <img id="modalImg" class="modal-img" alt="">
+    <h4 id="modalTitle"></h4>
+    <p id="modalDesc"></p>
+    <p id="modalPrice"></p>
+    <p id="modalCat"></p>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>© <span id="year"></span> ArtnaDesigner</p>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>
