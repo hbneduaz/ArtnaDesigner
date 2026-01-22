@@ -1,1 +1,30 @@
+backend:
+  name: github
+  repo: USERNAME/REPO_NAME
+  branch: main
 
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+publish_mode: simple
+
+collections:
+  - name: "catalog"
+    label: "Kataloq"
+    files:
+      - name: "works"
+        label: "İşlər"
+        file: "works.json"
+        format: "json"
+        fields:
+          - label: "İşlər"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Başlıq", name: "title", widget: "string" }
+              - { label: "Qiymət", name: "price", widget: "string", required: false }
+              - { label: "Kateqoriya", name: "category", widget: "string", required: false }
+              - { label: "Şəkil", name: "image", widget: "image" }
+              - { label: "Təsvir", name: "description", widget: "text", required: false }
+              - { label: "Etiketlər", name: "tags", widget: "list", required: false }
