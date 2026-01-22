@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="az">
 <head>
@@ -6,40 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ArtnaDesigner</title>
   <meta name="description" content="ArtnaDesigner — iş kataloqu" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <img class="logo" src="assets/logo.png" alt="ArtnaDesigner logo" />
-      <div class="brand-text">
-        <h1 class="brand-title">ArtnaDesigner</h1>
-        <p class="brand-sub">Kataloq • İş nümunələri</p>
+
+  <!-- HERO POSTER STYLE -->
+  <header class="poster">
+    <div class="poster-frame">
+      <div class="poster-top">
+        <div class="mini-logo">
+          <img src="assets/logo.png" alt="ArtnaDesigner logo">
+        </div>
+
+        <nav class="poster-nav">
+          <a href="#works">İşlər</a>
+          <a href="#about">Haqqında</a>
+          <a href="#contact">Əlaqə</a>
+        </nav>
       </div>
-    </div>
 
-    <nav class="nav">
-      <a href="#works">İşlər</a>
-      <a href="#about">Haqqında</a>
-      <a href="#contact">Əlaqə</a>
-    </nav>
-  </header>
+      <div class="poster-center">
+        <p class="poster-kicker">ARTNADESIGNER</p>
+        <h1 class="poster-title">ARTNA</h1>
+        <p class="poster-subtitle">XƏYALLARINI STİKERƏ ÇEVİR</p>
 
-  <main class="container">
-    <section class="hero">
-      <div class="hero-card">
-        <h2 class="hero-title">Xəyallarını dizayna çevir.</h2>
-        <p class="hero-text">İşlər aşağıda avtomatik əlavə olunur.</p>
-        <div class="hero-actions">
-          <a class="btn" href="#works">İşlərə bax</a>
-          <a class="btn btn-ghost" href="#contact">Əlaqə</a>
+        <div class="ornament"></div>
+
+        <p class="poster-text">
+          Unikal sticker və dizayn nümunələri burada kataloq şəklində toplanır.
+          Sifariş və əlaqə üçün aşağıdakı bölməyə keç.
+        </p>
+
+        <div class="poster-actions">
+          <a class="pbtn" href="#works">İşlərə bax</a>
+          <a class="pbtn ghost" href="#contact">Sifariş / Əlaqə</a>
         </div>
       </div>
-    </section>
+    </div>
+  </header>
 
+  <main class="wrap">
+
+    <!-- WORKS -->
     <section id="works" class="section">
       <div class="section-head">
-        <h3 class="section-title">İşlər</h3>
+        <h2 class="section-title">İşlər</h2>
+
         <div class="filters">
           <input id="search" class="input" type="search" placeholder="Axtar (ad, etiket...)" autocomplete="off" />
           <select id="category" class="select">
@@ -52,42 +68,43 @@
       <div id="empty" class="empty hidden">Heç nə tapılmadı.</div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="section">
-      <h3 class="section-title">Haqqında</h3>
-      <div class="card">
+      <h2 class="section-title">Haqqında</h2>
+      <div class="paper">
         <p class="muted">
-          ArtnaDesigner — dizayn işləri üçün kataloq səhifəsidir. Yeni işlər mütəmadi əlavə olunur.
+          ArtnaDesigner — sticker və dizayn işlərinin kataloq səhifəsidir. Yeni işlər mütəmadi əlavə olunur.
         </p>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section">
-      <h3 class="section-title">Əlaqə</h3>
-      <div class="card contact">
+      <h2 class="section-title">Əlaqə</h2>
 
-        <div class="contact-row">
-          <span class="label">Instagram</span>
-          <span class="value">@artna_desinger</span>
+      <div class="paper contact">
+        <div class="c-row">
+          <span class="c-label">Instagram</span>
+          <span class="c-value">@artna_desinger</span>
+        </div>
+        <div class="c-row">
+          <span class="c-label">WhatsApp</span>
+          <span class="c-value">055 441 74 23</span>
         </div>
 
-        <div class="contact-row">
-          <span class="label">WhatsApp</span>
-          <span class="value">055 441 74 23</span>
+        <div class="c-actions">
+          <a class="plink" href="https://instagram.com/artna_desinger" target="_blank" rel="noopener">Instagram-a keç</a>
+          <a class="plink" href="https://wa.me/994554417423?text=Salam%20ArtnaDesigner%20sifariş%20üçün%20yazıram" target="_blank" rel="noopener">WhatsApp-la yaz</a>
         </div>
-
-        <div class="contact-actions">
-          <a class="link" href="https://instagram.com/artna_desinger" target="_blank" rel="noopener">
-            Instagram-a keç
-          </a>
-          <a class="link" href="https://wa.me/994554417423?text=Salam%20ArtnaDesigner%20sifariş%20üçün%20yazıram" target="_blank" rel="noopener">
-            WhatsApp-la yaz
-          </a>
-        </div>
-
       </div>
     </section>
+
+    <footer class="footer">
+      <p class="muted">© <span id="year"></span> ArtnaDesigner</p>
+    </footer>
   </main>
 
+  <!-- MODAL -->
   <div id="modal" class="modal hidden" aria-hidden="true">
     <div class="modal-backdrop" data-close="1"></div>
     <div class="modal-dialog" role="dialog" aria-modal="true">
@@ -105,10 +122,6 @@
       </div>
     </div>
   </div>
-
-  <footer class="footer">
-    <p class="muted small">© <span id="year"></span> ArtnaDesigner</p>
-  </footer>
 
   <script>
     const $ = (id) => document.getElementById(id);
@@ -170,13 +183,13 @@
       list.forEach(item => {
         const card = document.createElement("button");
         card.type = "button";
-        card.className = "grid-item";
+        card.className = "work";
         card.innerHTML = `
-          <div class="thumb">
+          <div class="work-img">
             <img src="${esc(item.image)}" alt="${esc(item.title)}" loading="lazy" />
           </div>
-          <div class="grid-info">
-            <h4>${esc(item.title)}</h4>
+          <div class="work-info">
+            <h3>${esc(item.title)}</h3>
             <p class="muted">${esc(item.price)}</p>
           </div>
         `;
@@ -265,4 +278,3 @@
   </script>
 </body>
 </html>
-```
