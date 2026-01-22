@@ -1,110 +1,263 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ArtnaDesigner</title>
-  <meta name="description" content="ArtnaDesigner — Dizayn işləri və kataloq">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="ArtnaDesigner — iş kataloqu" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="topbar">
+    <div class="brand">
+      <img class="logo" src="assets/logo.png" alt="ArtnaDesigner logo" />
+      <div class="brand-text">
+        <h1 class="brand-title">ArtnaDesigner</h1>
+        <p class="brand-sub">Kataloq • İş nümunələri</p>
+      </div>
+    </div>
 
-<!-- ================= HEADER ================= -->
-<header class="topbar">
-  <div class="brand">
-    <img src="assets/logo.png" alt="ArtnaDesigner Logo" class="logo">
-    <div>
-      <h1 class="brand-title">ArtnaDesigner</h1>
-      <p class="brand-sub">Kataloq • Dizayn işləri</p>
+    <nav class="nav">
+      <a href="#works">İşlər</a>
+      <a href="#about">Haqqında</a>
+      <a href="#contact">Əlaqə</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h2 class="hero-title">Xəyallarını dizayna çevir.</h2>
+        <p class="hero-text">İşlər aşağıda avtomatik əlavə olunur.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#works">İşlərə bax</a>
+          <a class="btn btn-ghost" href="#contact">Əlaqə</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="section">
+      <div class="section-head">
+        <h3 class="section-title">İşlər</h3>
+        <div class="filters">
+          <input id="search" class="input" type="search" placeholder="Axtar (ad, etiket...)" autocomplete="off" />
+          <select id="category" class="select">
+            <option value="all">Hamısı</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="grid" class="grid"></div>
+      <div id="empty" class="empty hidden">Heç nə tapılmadı.</div>
+    </section>
+
+    <section id="about" class="section">
+      <h3 class="section-title">Haqqında</h3>
+      <div class="card">
+        <p class="muted">
+          ArtnaDesigner — dizayn işləri üçün kataloq səhifəsidir. Yeni işlər mütəmadi əlavə olunur.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h3 class="section-title">Əlaqə</h3>
+      <div class="card contact">
+        <div class="contact-row">
+          <span class="label">Instagram:</span>
+          <span class="value">@artna_desinger</span>
+        </div>
+        <a class="link" href="https://instagram.com/artna_desinger" target="_blank" rel="noopener">
+          instagram.com/artna_desinger
+        </a>
+
+        <div class="spacer"></div>
+
+        <div class="contact-row">
+          <span class="label">Telefon / WhatsApp:</span>
+          <span class="value">055 441 74 23</span>
+        </div>
+        <a class="link" href="https://wa.me/994554417423?text=Salam%20ArtnaDesigner%20sifariş%20üçün%20yazıram" target="_blank" rel="noopener">
+          WhatsApp ilə yaz
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" data-close="1"></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Bağla">×</button>
+      <div class="modal-body">
+        <img id="modalImg" class="modal-img" alt="" />
+        <div class="modal-info">
+          <h4 id="modalTitle" class="modal-title"></h4>
+          <p id="modalDesc" class="modal-desc muted"></p>
+          <div class="modal-meta">
+            <span id="modalPrice" class="pill hidden"></span>
+            <span id="modalCat" class="pill pill-ghost hidden"></span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <nav class="nav">
-    <a href="#works">İşlər</a>
-    <a href="#about">Haqqında</a>
-    <a href="#contact">Əlaqə</a>
-  </nav>
-</header>
+  <footer class="footer">
+    <p class="muted small">© <span id="year"></span> ArtnaDesigner</p>
+  </footer>
 
-<main class="container">
+  <script>
+    const $ = (id) => document.getElementById(id);
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <div class="hero-card">
-      <h2 class="hero-title">Xəyallarını dizayna çevir.</h2>
-      <p class="hero-text">
-        Sticker, poster və fərdi dizayn işləri. Yeni işlər mütəmadi əlavə olunur.
-      </p>
-      <a href="#works" class="btn">İşlərə bax</a>
-    </div>
-  </section>
+    const grid = $("grid");
+    const emptyState = $("empty");
+    const searchInput = $("search");
+    const categorySelect = $("category");
 
-  <!-- ================= WORKS ================= -->
-  <section id="works" class="section">
-    <h3 class="section-title">İşlər</h3>
+    const modal = $("modal");
+    const modalImg = $("modalImg");
+    const modalTitle = $("modalTitle");
+    const modalDesc = $("modalDesc");
+    const modalPrice = $("modalPrice");
+    const modalCat = $("modalCat");
+    const modalClose = $("modalClose");
 
-    <div class="filters">
-      <input id="search" class="input" type="search" placeholder="Axtar...">
-      <select id="category" class="select">
-        <option value="all">Hamısı</option>
-      </select>
-    </div>
+    let items = [];
 
-    <div id="grid" class="grid"></div>
-    <div id="empty" class="hidden">Heç bir nəticə tapılmadı.</div>
-  </section>
+    function esc(s) {
+      return String(s ?? "").replace(/[&<>"']/g, (m) => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+      }[m]));
+    }
 
-  <!-- ================= ABOUT ================= -->
-  <section id="about" class="section">
-    <h3 class="section-title">Haqqında</h3>
-    <div class="card">
-      <p>
-        ArtnaDesigner — dizayn işlərimin nümayiş səhifəsidir.
-        Fərdi sifarişlər qəbul olunur. Yeni layihələr və kreativ işlər
-        bu kataloqda paylaşılır.
-      </p>
-    </div>
-  </section>
+    function normalizeItem(raw) {
+      return {
+        title: String(raw.title ?? "").trim(),
+        description: String(raw.description ?? "").trim(),
+        price: String(raw.price ?? "").trim(),
+        category: String(raw.category ?? "").trim(),
+        image: String(raw.image ?? "").trim(),
+        tags: Array.isArray(raw.tags) ? raw.tags.map(t => String(t).trim()).filter(Boolean) : []
+      };
+    }
 
-  <!-- ================= CONTACT ================= -->
-  <section id="contact" class="section">
-    <h3 class="section-title">Əlaqə</h3>
-    <div class="card">
+    function setCategories(list) {
+      const set = new Set(list.map(x => x.category).filter(Boolean));
+      const cats = ["all", ...Array.from(set).sort((a,b)=>a.localeCompare(b))];
 
-      <p><strong>Instagram:</strong> @artna_desinger</p>
-      <a href="https://instagram.com/artna_desinger" target="_blank">
-        instagram.com/artna_desinger
-      </a>
+      categorySelect.innerHTML = "";
+      cats.forEach(c => {
+        const opt = document.createElement("option");
+        opt.value = c;
+        opt.textContent = (c === "all") ? "Hamısı" : c;
+        categorySelect.appendChild(opt);
+      });
+    }
 
-      <br><br>
+    function render(list) {
+      grid.innerHTML = "";
 
-      <p><strong>Telefon / WhatsApp:</strong> 055 441 74 23</p>
-      <a href="https://wa.me/994554417423?text=Salam%20ArtnaDesigner%20sifariş%20üçün%20yazıram" target="_blank">
-        WhatsApp ilə yaz
-      </a>
+      if (!list.length) {
+        emptyState.classList.remove("hidden");
+        return;
+      }
+      emptyState.classList.add("hidden");
 
-    </div>
-  </section>
+      list.forEach(item => {
+        const card = document.createElement("button");
+        card.type = "button";
+        card.className = "grid-item";
+        card.innerHTML = `
+          <div class="thumb">
+            <img src="${esc(item.image)}" alt="${esc(item.title)}" loading="lazy" />
+          </div>
+          <div class="grid-info">
+            <h4>${esc(item.title)}</h4>
+            <p class="muted">${esc(item.price)}</p>
+          </div>
+        `;
+        card.addEventListener("click", () => openModal(item));
+        grid.appendChild(card);
+      });
+    }
 
-</main>
+    function filter() {
+      const q = searchInput.value.toLowerCase().trim();
+      const c = categorySelect.value;
 
-<!-- ================= MODAL ================= -->
-<div id="modal" class="modal hidden">
-  <div class="modal-dialog">
-    <button id="modalClose" class="modal-close">×</button>
-    <img id="modalImg" class="modal-img" alt="">
-    <h4 id="modalTitle"></h4>
-    <p id="modalDesc"></p>
-    <p id="modalPrice"></p>
-    <p id="modalCat"></p>
-  </div>
-</div>
+      const out = items.filter(it => {
+        const hay = [
+          it.title,
+          it.description,
+          it.category,
+          it.price,
+          ...(it.tags || [])
+        ].join(" ").toLowerCase();
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <p>© <span id="year"></span> ArtnaDesigner</p>
-</footer>
+        const okQ = !q || hay.includes(q);
+        const okC = (c === "all") || (it.category === c);
+        return okQ && okC;
+      });
 
-<script src="app.js"></script>
+      render(out);
+    }
+
+    function openModal(item) {
+      modalImg.src = item.image;
+      modalImg.alt = item.title;
+      modalTitle.textContent = item.title;
+      modalDesc.textContent = item.description;
+
+      if (item.price) {
+        modalPrice.textContent = item.price;
+        modalPrice.classList.remove("hidden");
+      } else {
+        modalPrice.classList.add("hidden");
+      }
+
+      if (item.category) {
+        modalCat.textContent = item.category;
+        modalCat.classList.remove("hidden");
+      } else {
+        modalCat.classList.add("hidden");
+      }
+
+      modal.classList.remove("hidden");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeModal() {
+      modal.classList.add("hidden");
+      modal.setAttribute("aria-hidden", "true");
+      modalImg.src = "";
+    }
+
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target && e.target.dataset && e.target.dataset.close) closeModal();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
+    });
+
+    searchInput.addEventListener("input", filter);
+    categorySelect.addEventListener("change", filter);
+
+    $("year").textContent = new Date().getFullYear();
+
+    fetch("works.json", { cache: "no-store" })
+      .then(r => r.ok ? r.json() : Promise.reject(new Error("works.json tapılmadı")))
+      .then(data => {
+        const arr = Array.isArray(data) ? data : (Array.isArray(data.items) ? data.items : []);
+        items = arr.map(normalizeItem).filter(x => x.title && x.image);
+        setCategories(items);
+        render(items);
+      })
+      .catch(() => {
+        items = [];
+        setCategories([]);
+        render([]);
+      });
+  </script>
 </body>
 </html>
